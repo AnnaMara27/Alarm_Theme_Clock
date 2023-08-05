@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Theme Alarm Clock</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <button class="btn" id="modeToggle">Dark mode</button>
+    <div class="wrapper">
+      <h1 class="timeBox">06:30:31 PM</h1>
+      <div class="dateBox">
+        <span class="day">Sat</span>, <span class="month">July</span>
+        <span class="date">19</span> <span class="year">2023</span>
+      </div>
+      <div class="content">
+        <div class="column">
+          <select>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+          </select>
+        </div>
+        <div class="column">
+          <select>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+          </select>
+        </div>
+        <div class="column">
+          <select>
+            <option value="01">AM</option>
+            <option value="02">PM</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" id="setAlarmBtn">Set Alarm</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
