@@ -4,7 +4,6 @@ const currentTime = document.querySelector("h1");
 const content = document.querySelector(".content");
 const setAlarmBtn = document.getElementById("setAlarmBtn");
 
-
 let alarmTime;
 let isAlarmSet = false;
 const ringtone = new Audio("files/ringtone.wav");
@@ -20,11 +19,6 @@ toggleModeBtn.addEventListener("click", (e) => {
     toggleModeBtn.innerText = "Light mode";
   }
 });
-
-// TIME DISPLAY
-
-
-
 
 //GET ALARM TIMING VALUES
 for (let i = 12; i > 0; i--) {
@@ -51,10 +45,10 @@ setInterval(() => {
     month = time.getMonth(),
     date = time.getDate(),
     day = time.getDay();
-    h = time.getHours(),
-    m = time.getMinutes(),
-    s = time.getSeconds(),
-    ampm = "AM";
+  (h = time.getHours()),
+    (m = time.getMinutes()),
+    (s = time.getSeconds()),
+    (ampm = "AM");
 
   if (h >= 12) {
     h = h - 12;
@@ -65,8 +59,6 @@ setInterval(() => {
   h = h < 10 ? "0" + h : h;
   m = m < 10 ? "0" + m : m;
   s = s < 10 ? "0" + s : s;
-
-  console.log(`${h}:${m}:${s} ${ampm}`);
 
   const days = [
     "Sunday",
@@ -91,29 +83,44 @@ setInterval(() => {
     "Nov",
     "Dec",
   ];
-  console.log(day)
-  const dayDisplay = document.querySelector(".date");
-  dayDisplay.innerText = day;
+
+  // TIME DISPLAY
+  const dayDisplay = document.querySelector(".day");
+  const dateDisplay = document.querySelector(".date");
+  const monDisplay = document.querySelector(".month");
+  const yearDisplay = document.querySelector(".year");
+
+  dayDisplay.innerText = `${days[day]}`;
+  dateDisplay.innerText = `${date}`;
+  monDisplay.innerText = `${months[month]}`;
+
+  yearDisplay.innerText = `${year}`;
 
   currentTime.innerText = `${h}:${m}:${s} ${ampm}`;
 
   if (alarmTime == `${h}:${m} ${ampm}`) {
+    ringtone.addEventListener(
+      "ended",
+      function () {
+        this.currentTime = 0;
+        this.play();
+      },
+      false
+    );
     ringtone.play();
-    ringtone.loop() = true;
   }
 }, 1000);
 
 //SET ALARM
 
 function setAlarm() {
-  if(isAlarmSet) {
+  if (isAlarmSet) {
     alarmTime = "";
     ringtone.pause();
     content.classList.remove("disable");
     setAlarmBtn.innerText = "Set Alarm";
-    return isAlarmSet = false;
+    return (isAlarmSet = false);
   }
-
 
   let chosenTime = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`;
 
