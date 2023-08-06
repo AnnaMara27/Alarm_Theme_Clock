@@ -60,6 +60,7 @@ body {
   flex-direction: column;
   align-items: center;
   color: var(--primary-color);
+  margin: 0 auto;
   width: 500px;
   padding: 30px 50px;
   border-radius: 15px;
@@ -82,6 +83,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
+  margin-bottom: 1.5rem;
 }
 
 .wrapper .content.disable {
@@ -148,7 +150,7 @@ body {
 @media (max-width: 500px) {
   .wrapper {
     width: 400px;
-    padding: 10px 20px;
+    padding: 20px;
   }
 
   .wrapper h1 {
